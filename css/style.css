@@ -1,0 +1,47 @@
+body {
+    background-color: #ffe2d8;
+}
+h1 {
+    font-family: 'Open Sans';
+    font-weight: lighter;
+}
+.main-header {
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: x-large;
+}
+.nav-link {
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+}
+.dropdown-item {
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    font-size: smaller;
+}
+.btn {
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+}
+.main-content {
+    min-height: 600px;
+}
+.site-footer {
+    background-color: white;
+}
+.navbar {
+    z-index: 100;
+}
+.dropdown-menu {
+    background-color: #d6b2a6;
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
+}
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.logo {
+    height: 60px;
+}

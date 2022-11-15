@@ -6,22 +6,75 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/style.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300"/>
         <title>Spotcheck</title>
     </head>
-    <body>
-    <header class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h1>Spotcheck</h1>
+    <body class="d-flex flex-column min-vh-100">
+        <header class="jumbotron jumbotron-fluid py-3">
+            <nav class="navbar navbar-expand-md">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/spotchecklogo.png" alt="" width="50" class="d-inline-block align-middle">
+                        <span class="main-header">Spotcheck</span>
+                      </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <div class="nav-item">
+                                <a class="nav-link" href="#">Features</a>
+                            </div>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Resources
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Administration</a></li>
+                                    <li><a class="dropdown-item" href="#">Configuration</a></li>
+                                    <li><a class="dropdown-item" href="#">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <div class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </div>
+                            <div class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div> 
+            </nav>
+        </header>
+
+        <div class="container">
+            <div class="row main-content">
+                <div class="col-md-4 align-self-center">
+                    <h1>
+                        Don't lose your spot
+                    </h1>
+                </div>
+                <div class="col-md-8 align-self-center">
+                    <div class="d-none d-sm-block">
+                        image will go here
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
+        
+        <footer class="site-footer mt-auto">
+            <div class="container">
+                <div class="row">
+                    footer stuff here
+                </div>
+            </div>
+        </footer>
+
 
     <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
-        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>
