@@ -9,7 +9,12 @@
     "lite": "lite-server",
     "scss": "sass css:css",
     "watch:scss": "onchange 'css/*.scss' -- npm run scss",
-    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'"
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite'",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "imagemin": "imagemin img/* -o dist/img",
+    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html && usemin resourcesConfiguration.html -d dist --htmlmin -o dist/resourcesConfiguration.html",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin"
   },
   "repository": {
     "type": "git"
@@ -17,10 +22,15 @@
   "author": "Katie Chu",
   "license": "ISC",
   "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "imagemin": "^8.0.1",
+    "imagemin-cli": "^7.0.0",
     "lite-server": "^2.6.1",
     "onchange": "^7.1.0",
     "parallelshell": "3.0.2",
-    "sass": "^1.56.1"
+    "rimraf": "^3.0.2",
+    "sass": "^1.56.1",
+    "usemin-cli": "^0.6.0"
   },
   "dependencies": {
     "boostrap": "^2.0.0",
