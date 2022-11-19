@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/css/style.css"/>
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300"/>
+        <title>Spotcheck</title>
+    </head>
+    <body class="d-flex flex-column min-vh-100 background-white">
+        <header class="jumbotron jumbotron-fluid py-3 sticky-top">
+            <nav class="navbar navbar-expand-md">
+                <div class="container-fluid">
+                    <div class="ms-sm-3">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="img/spotchecklogo.png" alt="Spotcheck Logo" width="50" class="my-auto">
+                            <span class="main-header">Spotcheck</span>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav mx-sm-auto">
+                            <div class="nav-item me-sm-3">
+                                <a class="nav-link" href="#">Features</a>
+                            </div>
+                            <li class="nav-item dropdown me-sm-3">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Resources
+                                </a>
+                                <ul class="dropdown-menu justify-content-center" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Administration</a></li>
+                                    <li><a class="dropdown-item" href="#">Configuration</a></li>
+                                    <li><a class="dropdown-item" href="#">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <div class="nav-item me-sm-3">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </div>
+                            <div class="nav-item me-sm-3">
+                                <a class="nav-link" href="#">About</a>
+                            </div>
+                            <div class="nav-item me-sm-3 d-block d-md-none">
+                                <a id="logACaseNavLink" class="nav-link" href="#">Log a Case</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-none d-md-block">
+                        <button id="caseButton" class="btn case-button text-white">Log a Case</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div id="caseModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header mx-auto">
+                        <h3>Log a Case</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <p class="text-center">Please allow 5 business days for response. Alternatively, cases can be opened via email.<br/>Please address them to: support@spotcheckforsalesforce.com</p>
+                            </div>
+                            <form>
+                                <div class="row form-group">
+                                    <div class="col">
+                                        <label for="name" class="col-form-label">Name:</label>
+                                        <input type="text" class="form-control" id="name" name="name">
+                                    </div>
+                                    <div class="col">
+                                        <label for="company" class="col-form-label">Company:</label>
+                                        <input type="text" class="form-control" id="company" name="company">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col">
+                                        <label for="email" class="col-form-label">Email:</label>
+                                        <input type="email" class="form-control" id="email" name="email">
+                                    </div>
+                                    <div class="col">
+                                        <label for="orgId" class="col-form-label">Salesforce Org Id:</label>
+                                        <input type="text" class="form-control" id="orgId" name="orgId">
+                                    </div>
+                                    <div class="col my-auto">
+                                        <div class="form-check">
+                                            <label class="form-check-label" for="subscriberAccess">
+                                              Subscriber Access granted?
+                                            </label>
+                                            <input class="form-check-input" type="checkbox" value="" id="subscriberAccess">
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label for="issue" class="col-form-label">Describe your issue:</label>
+                                    <div class="col">
+                                        <textarea rows="4" type="text" class="form-control" id="issue" name="issue"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label for="screenshots" class="col-form-label">Screenshots of issue:</label>
+                                    <div class="col">
+                                        <input rows="4" type="file" class="form-control" id="screenshots" name="screenshots">
+                                    </div>
+                                </div>
+                                <div class="row form-group mt-3">
+                                    <div class="col">
+                                        <button class="btn submit-button text-white" type="submit">Submit</button>
+                                        <button class="btn btn-secondary ms-3" type="close" data-bs-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="documentation-nav d-block d-md-none">
+            <div class="container-fluid">
+                <div class="row m-1 my-3">
+                    <div class="col-10">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-secondary" type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#documentation-sidebar" aria-controls="documentation-sidebar" aria-expanded="false" aria-label="Documentation navigation">
+                            <i class="fa fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container-xxl sidebar-container">
+            <aside class="sidebar d-md-block collapse" id="documentation-sidebar">
+                <nav class="sidebar-links p-2" id="documentationNav">
+                    <ul class="list-unstyled">
+                        <li>
+                            <button class="d-inline-flex" data-bs-toggle="collapse" data-bs-target="#lightning-component-collapse" aria-expanded="false">
+                                Lightning Component
+                            </button>
+                        </li>
+                        <div class="collapse ms-2" id="lightning-component-collapse">
+                            <ul class="list-unstyled">
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                            </ul>
+                        </div>
+                        <li>
+                            <button class="d-inline-flex" data-bs-toggle="collapse" data-bs-target="#settings-collapse" aria-expanded="false">
+                                Settings
+                            </button>
+                        </li>
+                        <div class="collapse ms-2" id="settings-collapse">
+                            <ul class="list-unstyled">
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                            </ul>
+                        </div>
+                        <li>
+                            <button class="d-inline-flex" data-bs-toggle="collapse" data-bs-target="#display-collapse" aria-expanded="false">
+                                Display
+                            </button>
+                        </li>
+                        <div class="collapse ms-2" id="display-collapse">
+                            <ul class="list-unstyled">
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                            </ul>
+                        </div>
+                        <li>
+                            <button class="d-inline-flex" data-bs-toggle="collapse" data-bs-target="#relationship-collapse" aria-expanded="false">
+                                Relationships
+                            </button>
+                        </li>
+                        <div class="collapse ms-2" id="relationship-collapse">
+                            <ul class="list-unstyled">
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                                <li>something</li>
+                            </ul>
+                        </div>
+                    </ul>
+                </nav>
+            </aside>
+            <main class="documentation-main p-2">
+                documentation here
+            </main>
+        </div>
+        
+        <footer class="site-footer mt-auto">
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col ms-4">
+                        <h5>Spotcheck</h5>
+                        <ul class="list-unstyled">
+                            <li class="footer-link"><a href="">About</a></li>
+                            <li class="footer-link"><a href="">Contact</a></li>
+                            <li class="footer-link"><a href="">Appexchange</a></li>
+                            <li class="footer-link"><a href="">Open a Case</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h6>Resources</h6>
+                        <ul class="list-unstyled">
+                            <li class="footer-link"><a href="">Administration</a></li>
+                            <li class="footer-link"><a href="">Configuration</a></li>
+                            <li class="footer-link"><a href="">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h6>Follow us!</h6>
+                        <i class="fa fa-instagram me-1"></i>
+                        <i class="fa fa-facebook me-1"></i>
+                        <i class="fa fa-linkedin me-1"></i>
+                        <i class="fa fa-youtube me-1"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
