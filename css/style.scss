@@ -5,30 +5,6 @@ $color-black: #000;
 $color-button-hover:rgb(42, 42, 42);
 $color-dropdown: #e6dedb;
 $color-dropdown-hover: rgba(255, 255, 255, 0.2);
-@media (min-width: 768px) {
-    .sidebar-links {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 5rem;
-        display: block !important;
-        height: calc(100vh - 7rem);
-        overflow-y: auto;
-    }
-    .sidebar-container {
-        display: grid;
-        gap: 1.5rem;
-        grid-template-columns: 1fr 3fr;
-    }
-}
-@media (min-width: 992px) {
-    .documentation-main {
-        grid-template-columns: 4fr 1fr;
-        grid-template-rows: auto 1fr;
-    }
-    .sidebar-container {
-        grid-template-columns: 1fr 5fr;
-    }
-}
 body {
     background-color: $color-background-primary;
 }
@@ -100,8 +76,7 @@ a, a:hover {
     height: 60px;
 }
 .resources-nav {
-    background-color: $color-grey;
-    ;
+    background-color: $color-dropdown;
 }
 .case-button {
     background-color: $color-black;
@@ -124,22 +99,42 @@ a, a:hover {
 input {
     font-family: 'Open Sans';
 }
-
 label {
     font-family: 'Open Sans';
     font-weight: lighter;
 }
-
 p {
     font-family: 'Open Sans';
     font-size: .75rem;
-}
-
+}ß
 .sidebar {
-    background-color: $color-white;
+    background-color: #fff;
     grid-area: sidebar;
 }
-
+@media (min-width: 768px) {
+    .sidebar-links {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 5rem;
+        display: block !important;
+        height: calc(100vh - 7rem);
+        overflow-y: auto;
+    }
+    .sidebar-container {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 1fr 3fr;
+    }
+}
+@media (min-width: 992px) {
+    .documentation-main {
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: auto 1fr;
+    }
+    .sidebar-container {
+        grid-template-columns: 1fr 5fr;
+    }
+}
 aside nav ul li{
     font-family: 'Open Sans';
     font-weight: lighter;

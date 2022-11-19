@@ -1,27 +1,4 @@
-@media (min-width: 768px) {
-  .sidebar-links {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 5rem;
-    display: block !important;
-    height: calc(100vh - 7rem);
-    overflow-y: auto;
-  }
-  .sidebar-container {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr 3fr;
-  }
-}
-@media (min-width: 992px) {
-  .documentation-main {
-    grid-template-columns: 4fr 1fr;
-    grid-template-rows: auto 1fr;
-  }
-  .sidebar-container {
-    grid-template-columns: 1fr 5fr;
-  }
-}
+@charset "UTF-8";
 body {
   background-color: #e9e2df;
 }
@@ -110,7 +87,7 @@ a, a:hover {
 }
 
 .resources-nav {
-  background-color: #f8f9fa;
+  background-color: #e6dedb;
 }
 
 .case-button {
@@ -150,11 +127,35 @@ p {
   font-size: 0.75rem;
 }
 
-.sidebar {
+ß .sidebar {
   background-color: #fff;
   grid-area: sidebar;
 }
 
+@media (min-width: 768px) {
+  .sidebar-links {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    display: block !important;
+    height: calc(100vh - 7rem);
+    overflow-y: auto;
+  }
+  .sidebar-container {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 3fr;
+  }
+}
+@media (min-width: 992px) {
+  .documentation-main {
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .sidebar-container {
+    grid-template-columns: 1fr 5fr;
+  }
+}
 aside nav ul li {
   font-family: "Open Sans";
   font-weight: lighter;
